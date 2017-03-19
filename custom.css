@@ -1,0 +1,28 @@
+.slide {
+  padding: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.slide::after {
+  top: 85%;
+  width: auto;
+  background: none;
+  color: inherit;
+}
+
+.slide h1,
+.slide h2,
+.slide p,
+.slide li {
+  font-family: PT Serif, Georgia, serif;
+  color: inherit;
+}
+
+.slide pre:only-child {
+  margin-bottom: 0;
+}
+
+.slide code {
+  font-family: Fira Code, monospace;
+}
