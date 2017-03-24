@@ -25,6 +25,264 @@
 	</section>
 
 	<section class="slide">
+		<ul>
+			<li>Разработчик в <a href="https://datarobot.com/">DataRobot</a></li>
+			<li>Делаю разные штуки, делюсь на <a href="https://github.com/alexeyraspopov">Гитхабе</a></li>
+			<li>Умею стрелять в шутерах на консолях</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<ul>
+			<li>Лёша, за что ты так не любишь <span class="accent">Redux</span>?</li>
+			<li class="next">А ты пробовал <span class="accent">MobX</span>?</li>
+			<li class="next">А с ним то что не так?</li>
+			<li class="next">Не понимаю почему у тебя так <span class="accent">горит</span>...</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2 class="title">APIs in the <br><span class="accent">Brave New World</span></h2>
+	</section>
+
+	<section class="slide darkside">
+		<p class="title">Ангулар, <em class="accent">прости</em>, <br>но дело в тебе.</p>
+	</section>
+
+	<section class="slide">
+		<ol>
+			<li>Имеют свойство не откладываться в голове;</li>
+			<li>Создают поддельное чувство разницы, когда по сути предоставляют те же возможности.</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<p>Flux, Reflux, Alt, Flummox, Fluxxor, Fluxible, Fluce, Marty, McFly, DeLorean, Fynx, Material Flux, Ты, Nuclear, Все, Microcosm, Равно, Lux, Nanoflux, Не, Fluxy, Читаешь, Fluxette, Smitty, Omniscient, RxFlux, Redux<span class="accent">...</span></p>
+	</section>
+
+	<section class="slide">
+		<p class="title">Аксиома <em class="accent">Эскобара</em> в действии</p>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">render</span> = (Data) <span class="accent-2">=></span> UI</code>
+			<code class="next"><span class="accent">update</span> = (State, Action) <span class="accent-2">=></span> State'</code>
+			<code class="next">Actions = [UpdateThis, AddThat, DeleteShit, <span class="accent-2">...</span>]</code>
+			<code class="next">AppState = Actions.<span class="accent">reduce</span>(<span class="accent">update</span>, InitialState)</code>
+			<code class="next">AppState.<span class="accent">subscribe</span>(<span class="accent">render</span>)</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<p class="title">Катя попросила добавить на слайды <span class="accent">пасхалку</span></p>
+	</section>
+
+	<section class="slide darkside easter">
+		<p class="title">Нет<span class="accent">,</span> это не она</p>
+	</section>
+
+	<section class="slide">
+		<ol>
+			<li>Языковые конструкции</li>
+			<li>Объекты первого класса</li>
+			<li>Декларативное программирование</li>
+		</ol>
+	</section>
+
+	<section class="slide blueprint" id="comparison">
+		<p>JavaScript</p>
+		<pre>
+			<code>result = <span class="accent">array</span>.<span class="accent-2">filter</span>(<span class="accent">x</span> => <span class="accent">x</span> % 3).<span class="accent-2">map</span>(<span class="accent">x</span> => <span class="accent">x</span> ** 2);</code>
+		</pre>
+		<div class="next">
+			<p>Python</p>
+			<pre>
+				<code>result = [<span class="accent">x</span> ** 2 <span class="accent-2">for</span> <span class="accent">x</span> <span class="accent-2">in</span> <span class="accent">array</span> <span class="accent-2">if</span> <span class="accent">x</span> % 3]</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide">
+		<ul>
+			<li>Конструкции языка проще оптимизировать.</li>
+			<li class="next">API массива создает <em class="accent">промежуточные результаты</em>, списковое включение возвращает <em class="accent">конечный результат</em>.</li>
+			<li class="next">Списковое включение имеет общий принцип, API массивов всегда различно.</li>
+		</ul>
+	</section>
+
+	<section class="slide darkside">
+		<p>Языковые конструкции не требуют дополнительной документации — <br>вы уже давно их выучили.</p>
+		<p class="next">Кто-нибудь помнит <em class="accent">все</em> параметры <br><code>map()</code>, <code>filter()</code> и <code>reduce()</code>?</p>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">function</span> renderUsers() {</code>
+			<code>  <span class="accent">return</span> Users.retrieve()</code>
+			<code>    .then(<span class="accent-2">users</span> => render(<span class="accent-2">users</span>))</code>
+			<code>    .catch(<span class="accent-2">error</span> => notify(<span class="accent-2">error</span>));</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">async function</span> renderUsers() {</code>
+			<code>  <span class="accent">try</span> {</code>
+			<code>    <span class="accent">const</span> <span class="accent-2">users</span> = <span class="accent">await</span> Users.retrieve();</code>
+			<code>    <span class="accent">return</span> render(<span class="accent-2">users</span>);</code>
+			<code>  } <span class="accent">catch</span> (<span class="accent-2">error</span>) {</code>
+			<code>    <span class="accent">return</span> notify(<span class="accent-2">error</span>);</code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<ol>
+			<li>Решилась проблема переиспользования тех же данных на разных этапах;</li>
+			<li class="next">Обработка исключений теперь выглядит так же, как и в обычном коде;</li>
+			<li class="next">Использованы стандартные ключевые слова вместо специальных методов.</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<p><strong>Декларативное программирование</strong> — стиль создания программных структур и выражения логики вычислений без описания последовательности их создания.</p>
+	</section>
+
+	<section class="slide">
+		<p><strong>Объекты первого класса</strong> — <br>элементы, которые могут быть переданы <br>как параметр, возвращены из функции, присвоены переменной.</p>
+	</section>
+
+	<section class="slide">
+		<p><strong>DOM API</strong> — <em>императивная</em> модель, <em>мутабельная</em> структура данных.</p>
+		<p><strong>JSX</strong> — <em>декларативная</em> модель, <em>иммутабельная</em> структура данных.</p>
+		<p class="next">И те и другие — объекты первого класса.</p>
+	</section>
+
+	<section class="slide darkside">
+		<p class="title">Боже, что он <em class="accent">несёт</em>?</p>
+	</section>
+
+	<section class="slide">
+		<ul>
+			<li>react-transmit</li>
+			<li>react-refetch</li>
+			<li>react-loadable</li>
+			<li>react-controller</li>
+			<li>smalldots</li>
+			<li>...</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<ol>
+			<li>Уникальный опыт</li>
+			<li>Текучие абстракции</li>
+			<li>Повторяющиеся проблемы</li>
+			<li>Несовместимы между собой</li>
+		</ol>
+	</section>
+
+	<section class="slide darkside">
+		<p class="title">react-<span class="accent">coroutine</span></p>
+	</section>
+
+	<section class="slide blueprint">
+		<p><code>npm install react-coroutine</code></p>
+		<p class="next">Premium, только для <em class="accent">крутых</em> парней: <br><code>yarn add react-coroutine</code></p>
+	</section>
+
+	<section class="slide">
+		<ul>
+			<li><a href="https://alexeyraspopov.github.io/react-coroutine/">alexeyraspopov.github.io/react-coroutine</a></li>
+			<li><a href="https://github.com/alexeyraspopov/react-coroutine/">github.com/alexeyraspopov/react-coroutine</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<ol>
+			<li><span class="accent">Колокация</span> запросов к данным</li>
+			<li><span class="accent">Разделение</span> кода и его ленивая подгрузка</li>
+			<li><span class="accent">Изменение</span> контента во времени</li>
+			<li><span class="accent">Обработка</span> ошибок выполнения</li>
+		</ol>
+	</section>
+
+	<section class="slide">
+		<ul>
+			<li>Все описанные задачи соблюдают общий механизм <span class="accent">асинхронности</span>.</li>
+			<li class="next">Пользователь работает исключительно на уровне <span class="accent">языковых конструкций</span>.</li>
+			<li class="next"><span class="accent">Идиоматично</span> по отношению к компонентам React, возвращает JSX как результат.</li>
+		</ul>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">async</span> <span class="accent">function</span> PokemonPage({ match }) {</code>
+			<code>  <span class="accent">const</span> <span class="accent-2">pokemonId</span> = match.params.pokemonId;</code>
+			<code>  <span class="accent">const</span> <span class="accent-2">pokemon</span> = <span class="accent">await</span> PokemonAPI.retrieve(<span class="accent-2">pokemonId</span>);</code>
+			<div class="next fade">
+				<code class="comment">  // Самый обычный вызов асинхронной функции</code>
+				<code>  <span class="accent">const</span> { <span class="accent-3">PokemonInfo</span> } = <span class="accent">await</span> <mark><span class="accent">import</span>('PokemonInfo.react');</mark></code>
+			</div>
+			<code>  <span class="accent">return</span> &lt;<span class="accent-3">PokemonInfo</span> data={<span class="accent-2">pokemon</span>} /&gt;;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide blueprint" id="api">
+		<pre>
+			<code><span class="accent">import</span> Coroutine <span class="accent">from</span> 'react-coroutine';</code>
+		</pre>
+		<pre class="next">
+			<code>Coroutine.<span class="accent-2">create</span>(SomeComponent);</code>
+			<code>Coroutine.<span class="accent-2">create</span>(SomeComponent, getVariables);</code>
+		</pre>
+		<div class="next">
+			<p>или</p>
+			<pre>
+				<code>&lt;<span class="accent-3">Coroutine</span>.<span class="accent-2">render</span></code>
+				<code>  co={SomeComponent}</code>
+				<code>  variables={...} /&gt;</code>
+			</pre>
+		</div>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">async function*</span> SearchResultsContainer({ <span class="accent-2">query</span> }) {</code>
+			<code>  <span class="accent">yield</span> &lt;<span class="accent-3">LoadingSpinner</span> /&gt;;</code>
+			<code>  <span class="accent">try</span> {</code>
+			<code>    <span class="accent">const</span> <span class="accent-2">results</span> = <span class="accent">await</span> SearchDAO.retrieve(<span class="accent-2">query</span>);</code>
+			<code>    <span class="accent">return</span> &lt;<span class="accent-3">SearchResults</span> results={<span class="accent-2">results</span>} /&gt;;</code>
+			<code>  } <span class="accent">catch</span> (<span class="accent-2">error</span>) {</code>
+			<code>    <span class="accent">return</span> &lt;<span class="accent-3">ErrorMessage</span> error={<span class="accent-2">error</span>} /&gt;;</code>
+			<code>  }</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">async function*</span> StreamComponent() {</code>
+			<code>  <span class="accent">for await</span> (<span class="accent">const</span> <span class="accent-2">message</span> <span class="accent">of</span> dispatcher)</code>
+			<code>    <span class="accent">yield</span> &lt;<span class="accent-3">MessageInfo</span> message={<span class="accent-2">message</span>} />;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide darkside" id="contacts">
+		<h2 class="title">Лайкос, шейр, подписон</h2>
+		<ul>
+			<li><a href="https://twitter.com/alexeyraspopov"><span class="accent">twitter.com</span>/alexeyraspopov</a></li>
+			<li><a href="https://github.com/alexeyraspopov"><span class="accent">github.com</span>/alexeyraspopov</a></li>
+			<li><a href="https://alexeyraspopov.github.io/react-coroutine"><span class="accent">alexeyraspopov.github.io</span>/react-coroutine</a></li>
+		</ul>
+	</section>
+
+	<section class="slide">
 		<p class="title">Спасибо за внимание</p>
 	</section>
 
