@@ -218,6 +218,28 @@
 		</ul>
 	</section>
 
+	<section class="slide">
+		<p><strong>Сопрограмма</strong> (корутина) — <br>подпрограмма, которая поддерживает множество входных точек, остановку и продолжение выполнения с сохранением собственного состояния.</p>
+	</section>
+
+	<section class="slide">
+		<ul>
+			<li>Генераторы</li>
+			<li>Асинхронные функции</li>
+			<li>Асинхронные генераторы</li>
+		</ul>
+	</section>
+
+	<section class="slide blueprint">
+		<pre>
+			<code><span class="accent">async function</span> retrieveUserData(<span class="accent-2">userId</span>) {</code>
+			<code>  <span class="accent">const</span> response = <span class="accent">await</span> fetch(`/users/${<span class="accent-2">userId</span>}`);</code>
+			<code>  <span class="accent">const</span> <span class="accent-2">userProfile</span> = <span class="accent">await</span> response.json();</code>
+			<code>  <span class="accent">return</span> <span class="accent-2">userProfile</span>;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
 	<section class="slide blueprint">
 		<pre>
 			<code><span class="accent">async</span> <span class="accent">function</span> PokemonPage({ match }) {</code>
